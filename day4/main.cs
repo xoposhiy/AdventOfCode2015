@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-public class Day03
+public class Day04
 {
 	public static void Main()
 	{
