@@ -17,9 +17,15 @@ public class Day03
 
 		var cmds = Console.ReadLine();
 		var pos = Tuple.Create(0, 0);
-		Console.WriteLine(cmds.Select(c => pos = Tuple.Create(pos.Item1+dx[c], pos.Item2+dy[c])).Distinct().Count() + 1);
+		Console.WriteLine(
+			cmds.Select(c => pos = Tuple.Create(pos.Item1+dx[c], pos.Item2+dy[c]))
+			.Concat(new []{Tuple.Create(0, 0)})
+			.Distinct().Count());
 
 		var pp = new[]{Tuple.Create(0, 0), Tuple.Create(0, 0)};
-		Console.WriteLine(cmds.Select((c, i) => pp[i%2] = Tuple.Create(pp[i%2].Item1+dx[c], pp[i%2].Item2+dy[c])).Distinct().Count() + 1);
+		Console.WriteLine(
+			cmds.Select((c, i) => pp[i%2] = Tuple.Create(pp[i%2].Item1+dx[c], pp[i%2].Item2+dy[c]))
+			.Concat(new []{Tuple.Create(0, 0)})
+			.Distinct().Count());
 	}
 }
